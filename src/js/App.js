@@ -255,13 +255,13 @@ class App extends React.Component {
                 <div className="single-tab" id='map-tab' data-href='#map-area' >Map</div>
               </div>
               <div className="tabs map-area" id='map-area'>
-                <Map
+                {/* <Map
                   dataJSON={this.state.filteredDataJSON}
                   topoJSON={this.state.topoJSON}
                   chartOptions={this.props.chartOptions}
                   showModal={this.showModal}
                   mode={this.props.mode}
-                />
+                /> */}
               </div>
               <div className="tabs list-area active-area" id='list-area'>
                 <List
