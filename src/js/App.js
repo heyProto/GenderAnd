@@ -109,6 +109,10 @@ class App extends React.Component {
 
   }
 
+  capitalizeFirstLetter(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
   renderRating(d) {
     let stars = [],
       i;
