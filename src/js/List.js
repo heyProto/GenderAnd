@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from './Modal.js';
 import Utils from './utility.js';
 
 class ListCards extends React.Component {
@@ -63,16 +62,17 @@ class ListCards extends React.Component {
       let cards = this.state.cardsVisible.map((card, i) => {
         let class_name = (((i+1)% this.state.cardsInRow) == 0) ? "protograph-card div-without-margin-right" : "protograph-card";
         return(
-          <div
-            key={`protograph-grid-card_#{i}_${card.view_cast_id}`}
-            id={`protograph-grid-card-${card.view_cast_id}`}
-            data-viewcast_id={card.view_cast_id}
-            className={`protograph-grid-card protograph-trigger-modal ${class_name}`}
-            data-iframe_url={card.iframe_url}
-            onClick={this.props.showModal}
-          >
+          <a href={card.url} target="_blank">
+            <div
+              key={`protograph-grid-card_#{i}_${card.view_cast_id}`}
+              id={`protograph-grid-card-${card.view_cast_id}`}
+              data-viewcast_id={card.view_cast_id}
+              className={`protograph-grid-card protograph-trigger-modal ${class_name}`}
+              data-iframe_url={card.iframe_url}
+            >
             <div className="protograph-grid-card-interaction-overlay" />
-          </div>
+            </div>
+          </a>
         )
       })
       return (

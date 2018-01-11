@@ -6,7 +6,6 @@ import Map from './Map.js';
 import Utils from './utility.js';
 import {timeFormat} from 'd3-time-format';
 import Filter from "./filter.js";
-import Modal from "./Modal.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -270,12 +269,6 @@ class App extends React.Component {
                   showModal={this.showModal}
                 />
               </div>
-              <Modal
-                showModal={this.state.showModal}
-                closeModal={this.closeModal}
-                mode={this.state.mode}
-                iframeURL={this.state.iframeURL}
-              />
           </div>
         </div>
       )
