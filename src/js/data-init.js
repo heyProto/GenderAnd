@@ -87,7 +87,7 @@ var x = new ProtoGraph.Card.toMaps()
   x.init({
   selector: document.querySelector('#card-list-div'),
   dataURL: 'https://cdn.protograph.pykih.com/cbe9b09e0abd2b0c52a039d0/index.json',
-  topoURL: 'http://protograph.indianexpress.com/ie-mobbed/src/data/india-topo.json',
+  topoURL: 'https://cdn.protograph.pykih.com/ie-mobbed/src/data/india-topo.json',
   chartOptions: {
     chartTitle: 'Mob Justice in India',
     height: 500,
