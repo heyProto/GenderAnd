@@ -20,6 +20,7 @@
 	/*font-weight: bold;*/
 	font-size: 20px;
 	margin-right: 25px;
+	color: white !important;
 }
 
 .nav-links{
@@ -74,15 +75,7 @@
 }
 
 .fixed-cover-block-small{
-	background: white;
-    color: black;
-    height: 200px;
-}
-
-.fixed-cover-block-small .page-title{
-	color: black;
-	margin-left: 0px;
-	margin-bottom: 0px;
+    height: 250px;
 }
 
 .fixed-cover-block-small .page-title p{
