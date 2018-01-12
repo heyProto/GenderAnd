@@ -44,7 +44,7 @@ class App extends React.Component {
             all_data_keys.forEach((f) => {
               if (f === "hasdata" || f === "hasvideo" || f === "hasimage" || f === "interactive" || f === "sponsored"){
                 e[f] = e[f] ? "Yes" : "No"
-              }               
+              }
             });
             return e;
         });
@@ -74,7 +74,7 @@ class App extends React.Component {
     let dimension = this.getScreenSize();
 
     if(this.props.mode === 'laptop') {
-      $('.filter-col').sticky();
+      $('.filter-col').sticky({ getWidthFrom: '.col-4' });
       $('.banner-area .sticky-wrapper').css('float', 'left');
       $('.banner-area .sticky-wrapper').css("display", 'inline-block');
     }
@@ -97,7 +97,7 @@ class App extends React.Component {
 
   componentDidUpdate() {
     if(this.props.mode === 'laptop') {
-      $('.filter-col').sticky(); //{topSpacing:0}
+      $('.filter-col').sticky({ getWidthFrom: '.col-4' }); //{topSpacing:0}
       $('.banner-area .sticky-wrapper').css('float', 'left');
       $('.banner-area .sticky-wrapper').css("display", 'inline-block');
     }
@@ -114,21 +114,22 @@ class App extends React.Component {
   sortObject(obj, filter) {
     var arr = [];
     for (var prop in obj) {
-      if (obj.hasOwnProperty(prop)) {  
-        console.log(prop, obj.hasOwnProperty(prop), "-----------", !isNaN(+prop) ? +prop : prop) 
+      if (obj.hasOwnProperty(prop)) {
+        console.log(prop, obj.hasOwnProperty(prop), "-----------", !isNaN(+prop) ? +prop : prop)
         if (prop !== 'undefined') {
           arr.push({
             'name': prop,
             'value': !isNaN(+prop) ? +prop : prop,
             'count': obj[prop].length
           });
-        }     
+        }
       }
     }
     arr.sort(function (a, b) {
-      let key1 = a.name,
-        key2 = b.name;
-      if (key1 > key2) {
+      let key1 = a.name.toLowerCase().trim(),
+        key2 = b.name.toLowerCase().trim();
+
+      if (key1 < key2) {
         return -1;
       } else if (key1 == key2) {
         return 0;
