@@ -1,31 +1,31 @@
 
-// function getJSON(url, callback) {
-//     var xhr = new XMLHttpRequest();
-//     xhr.open('GET', url, true);
-//     xhr.responseType = 'json';
-//     xhr.onload = function () {
-//         var status = xhr.status;
-//         if (status == 200) {
-//             callback(null, xhr.response);
-//         } else {
-//             callback(status);
-//         }
-//     };
-//     xhr.send();
-// }
-// $(document).ready(function(){
-//     $("#sticker").sticky(); //({topSpacing:20});
-//     $('.related-articles-link').sticky({topSpacing: 20});
-//     $('#cont-button').on('click', (e) => {
-//         $('#cont-button').css('display', 'none');
-//         document.getElementById('article').className = 'article-area';
-//         $('body').scrollspy({
-//             target: '#myNavbar',
-//             offset: 70
-//         });
-//     })
+function getJSON(url, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function () {
+        var status = xhr.status;
+        if (status == 200) {
+            callback(null, xhr.response);
+        } else {
+            callback(status);
+        }
+    };
+    xhr.send();
+}
+$(document).ready(function(){
+    $("#sticker").sticky(); //({topSpacing:20});
+    $('.related-articles-link').sticky({topSpacing: 20});
+    $('#cont-button').on('click', (e) => {
+        $('#cont-button').css('display', 'none');
+        document.getElementById('article').className = 'article-area';
+        $('body').scrollspy({
+            target: '#myNavbar',
+            offset: 70
+        });
+    })
 
-// });
+});
 // getJSON('https://cdn.protograph.pykih.com/bfa1e8a3a73ae6485af3e87a/index.json', function (err, data){
 //     if (err != null) {
 //         alert('Something went wrong: ' + err);
