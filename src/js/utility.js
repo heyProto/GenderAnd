@@ -33,7 +33,7 @@ function groupBy(data, column) {
     switch (typeof column) {
         case "string":
             data.forEach(datum => {
-                key = datum[column] ? datum[column] : "उपलब्ध नहीं";
+                key = datum[column] ? datum[column] : undefined;
                 if (grouped_data[key]) {
                     grouped_data[key].push(datum);
                 } else {

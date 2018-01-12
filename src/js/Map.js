@@ -1,7 +1,7 @@
 import React from 'react';
 import * as topojson from 'topojson-client';
 import {geoPath, geoCentroid, geoMercator} from 'd3-geo';
-import PlotCircles from '../js/PlotCircles';
+// import PlotCircles from '../js/PlotCircles';
 import Voronoi from '../js/Voronoi';
 
 class MapsCard extends React.Component {

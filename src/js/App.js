@@ -6,7 +6,6 @@ import Map from './Map.js';
 import Utils from './utility.js';
 import {timeFormat} from 'd3-time-format';
 import Filter from "./filter.js";
-import Modal from "./Modal.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -34,7 +33,7 @@ class App extends React.Component {
       axios.get(topoURL)
     ])
     .then(axios.spread((card, topo) => {
-        let all_data_keys = ["byline", "genre", "subgenre", "interactive"],
+        let all_data_keys = ["genre", "subgenre", "country", "state", "city", "byline", "hasdata","hasvideo", "hasimage" , "interactive", "sponsored"],
           data,
           filters,
           filterJSON;
@@ -43,7 +42,9 @@ class App extends React.Component {
 
         data = data.map((e) => {
             all_data_keys.forEach((f) => {
-              e[f] = e[f] || "Not present"
+              if (f === "hasdata" || f === "hasvideo" || f === "hasimage" || f === "interactive" || f === "sponsored"){
+                e[f] = e[f] ? "Yes" : "No"
+              }
             });
             return e;
         });
@@ -107,45 +108,27 @@ class App extends React.Component {
       $(".tabs.active-area").removeClass("active-area");
       $(".tabs"+this.dataset.href).addClass("active-area");
     });
-
   }
 
-  renderRating(d) {
-    let stars = [],
-      i;
-    if (d.value === "Not present") {
-      return "Not present";
-    }
-    for (i = 0; i < 5; i++) {
-      if (i < d.value) {
-        stars.push(<i key={i} className="star icon protograph-star-small protograph-active-star"></i>);
-      } else {
-        stars.push(<i key={i} className="star icon protograph-star-small protograph-inactive-star"></i>);
-      }
-    }
-    return stars.map((e, i) => {
-      return (
-        e
-      )
-    });
-  }
 
   sortObject(obj, filter) {
     var arr = [];
     for (var prop in obj) {
       if (obj.hasOwnProperty(prop)) {
-        arr.push({
-          'name': prop,
-          'value': !isNaN(+prop) ? +prop : prop,
-          'count': obj[prop].length
-        });
+        console.log(prop, obj.hasOwnProperty(prop), "-----------", !isNaN(+prop) ? +prop : prop)
+        if (prop !== 'undefined') {
+          arr.push({
+            'name': prop,
+            'value': !isNaN(+prop) ? +prop : prop,
+            'count': obj[prop].length
+          });
+        }
       }
     }
     arr.sort(function (a, b) {
       let key1 = a.name.toLowerCase().trim(),
         key2 = b.name.toLowerCase().trim();
 
-      console.log(`${key1}, ${key2}`)
       if (key1 < key2) {
         return -1;
       } else if (key1 == key2) {
@@ -254,7 +237,6 @@ class App extends React.Component {
           <div className="proto-col col-12 protograph-app-map-and-list">
               <div className="tabs-area">
                 <div className="single-tab active-tab" id='list-tab' data-href='#list-area'>List</div>
-                <div className="single-tab" id='map-tab' data-href='#map-area' >Map</div>
               </div>
               <div className="tabs map-area" id='map-area'>
                 {/* <Map
@@ -272,12 +254,6 @@ class App extends React.Component {
                   showModal={this.showModal}
                 />
               </div>
-              <Modal
-                showModal={this.state.showModal}
-                closeModal={this.closeModal}
-                mode={this.state.mode}
-                iframeURL={this.state.iframeURL}
-              />
           </div>
         </div>
       )
