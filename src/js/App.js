@@ -73,7 +73,7 @@ class App extends React.Component {
     let dimension = this.getScreenSize();
 
     if(this.props.mode === 'laptop') {
-      $('.filter-col').sticky();
+      $('.filter-col').sticky({ getWidthFrom: '.col-4' });
       $('.banner-area .sticky-wrapper').css('float', 'left');
       $('.banner-area .sticky-wrapper').css("display", 'inline-block');
     }
@@ -96,7 +96,7 @@ class App extends React.Component {
 
   componentDidUpdate() {
     if(this.props.mode === 'laptop') {
-      $('.filter-col').sticky(); //{topSpacing:0}
+      $('.filter-col').sticky({ getWidthFrom: '.col-4' }); //{topSpacing:0}
       $('.banner-area .sticky-wrapper').css('float', 'left');
       $('.banner-area .sticky-wrapper').css("display", 'inline-block');
     }
@@ -142,9 +142,11 @@ class App extends React.Component {
       }
     }
     arr.sort(function (a, b) {
-      let key1 = a.value,
-        key2 = b.value;
-      if (key1 > key2) {
+      let key1 = a.name.toLowerCase().trim(),
+        key2 = b.name.toLowerCase().trim();
+
+      console.log(`${key1}, ${key2}`)
+      if (key1 < key2) {
         return -1;
       } else if (key1 == key2) {
         return 0;
