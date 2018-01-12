@@ -135,12 +135,15 @@
   margin-bottom: 10px; }
 
 .single-tab {
-  font-size: 16px;
+  font-size: 14px;
   font-family: cabin;
   border-bottom: 3px solid white;
   display: inline-block;
   padding: 0px 25px 8px;
-  cursor: pointer; }
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase; 
+}
 
 .active-tab {
   color: #F02E2E;
@@ -162,7 +165,7 @@
   background: #dadada; }
 
 .protograph-app-active-tab {
-  background: #F02E2E; }
+  background: #007cd7; }
 
 .protograph-app-tabs-container {
   display: none;
@@ -184,85 +187,32 @@
   margin-left: 20px; }
 
 /* data.css */
+
 .geo-borders {
-  /* fill: none;
+  fill: none;
   stroke: #afadad;
   stroke-width: 0.5px;
   stroke-linejoin: round;
-  stroke-linecap: round; */
+  stroke-linecap: round;
+}
+.geo-region {
+  fill: #fdf8d8;
 }
 .region-outline{
   cursor: pointer;
-  stroke: #555;
-  stroke-width: 0.3px;
+  stroke: none;
   fill-opacity: 0;
-  z-index: -1;
 }
-.protograph-good-heat-color {
-  fill: #fffcdb;
-  fill-opacity: 1;
-}
-.protograph-bad-heat-color {
-  fill: #81c2ff;
-  fill-opacity: 1;
-}
-.region-outline:hover {
-  stroke: black;
-  stroke-width: 1px;
-  z-index: 100;
-}
-.protogrpah-map-dulled-out {
-  cursor: initial;
-  fill: white !important;
-  fill-opacity: unset !important;
-  stroke: #555;
-  stroke-width: 0.3px !important;
-}
-.protograph-map-container {
-  /* width: 100%; */
-  /* height: 100%; */
-  position: relative;
-  /* display: inline-block; */
-  text-align: center;
-}
-.protograph-map-legends-container {
-  text-align: left;
-  position: absolute;
-  right: 0px;
-}
-.protograph-map-legends {
-  display: table;
-  border-collapse: collapse;
-}
-.protograph-map-legend-color {
-  height: 20px;
-  width: 25px;
-  display: table-cell;
-}
-.protograph-map-legend-text {
-  padding-left: 10px;
-  display: table-cell;
-}
-.protograph-map-legend {
-  margin: 5px 0px;
-}
-.legend-good-color {
-  background: #fffcdb;
-}
-.legend-bad-color {
-  background: #81c2ff;
-}
-
 .protograph-card-area{
   width: 100%;
-  text-align: center;
+  /*text-align: center;*/
   margin-top: 20px;
   /* height: 100vh; */
   overflow-y: auto;
 }
 .protograph-card{
   width: 140px;
-  height: 140px;
+  height: 230px;
   cursor: pointer;
   display: inline-block;
   text-align: left;
@@ -337,6 +287,9 @@
   color: #333;
   padding: 11px;
   margin-right: auto;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  margin-bottom: 50px;
 }
 #show-more-cards:focus {
   outline: 0;
@@ -377,6 +330,11 @@
   overflow: hidden;
   position: relative;
 }
+.protogrpah-map-dulled-out {
+  cursor: initial;
+  fill: white !important;
+  fill-opacity: unset !important;
+}
 .protograph-app-map-and-list {
   float: right;
   margin-right: 0px;
@@ -390,7 +348,7 @@
   font-size: 28px !important;
 }
 .protograph-star-small {
-  font-size: 16px !important;
+	font-size: 16px !important;
 }
 .protograph-active-star {
   color: #f7ca4a;
@@ -398,8 +356,18 @@
 .protograph-inactive-star {
   color: #e3e3e3;
 }
+
 .div-without-margin-right{
   margin-right: 0px;
+}
+
+.protograph-good-heat-color {
+  fill: #7ABAE8;
+  fill-opacity: 1;
+}
+.protograph-bad-heat-color {
+  fill: #0082CD;
+  fill-opacity: 1;
 }
 .protograph-grid-card {
   cursor: pointer;
@@ -423,7 +391,6 @@
   height: 100%;
   width: 100%;
   z-index: 1000;
-  overflow: auto;
 }
 .protograph-modal {
   position: absolute;
