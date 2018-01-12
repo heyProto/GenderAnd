@@ -106,10 +106,6 @@ var x = new ProtoGraph.Card.toMaps()
   },
   filters: [
     {
-      propName: 'byline',
-      alias: 'By Line'
-    },
-    {
       propName: 'genre',
       alias: 'Genre'
     },
@@ -117,9 +113,41 @@ var x = new ProtoGraph.Card.toMaps()
       propName: 'subgenre',
       alias: 'Sub Genre'
     },
+     {
+      propName: 'country',
+      alias: 'Country'
+    },
+    {
+      propName: 'state',
+      alias: 'State'
+    },
+    {
+      propName: 'city',
+      alias: 'City'
+    },
+    {
+      propName: 'byline',
+      alias: 'Byline'
+    },
+    {
+      propName: 'hasdata',
+      alias: 'Has data?'
+    },
+    {
+      propName: 'hasimage',
+      alias: 'Has Image?'
+    },
+    {
+      propName: 'hasvideo',
+      alias: 'Has Video?'
+    },
     {
       propName: 'interactive',
-      alias: 'Does the story have charts or visualisation?'
+      alias: 'Is Interactive?'
+    },  
+    {
+      propName: 'sponsored',
+      alias: 'Is Sponsored?'
     }
   ]
 })
