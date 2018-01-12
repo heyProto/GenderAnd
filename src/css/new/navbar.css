@@ -76,13 +76,18 @@
 .fixed-cover-block-small{
 	background: white;
     color: black;
-    height: 170px;
+    height: 200px;
 }
 
 .fixed-cover-block-small .page-title{
 	color: black;
 	margin-left: 0px;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
+}
+
+.fixed-cover-block-small .page-title p{
+	font-size: 14px;
+	line-height: 19px;
 }
 
 @media only screen and (max-width: 500px){
