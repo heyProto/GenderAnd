@@ -75,7 +75,15 @@
 }
 
 .fixed-cover-block-small{
-    height: 250px;
+	background: white;
+    color: black;
+    height: 200px;
+}
+
+.fixed-cover-block-small .page-title{
+	color: black;
+	margin-left: 0px;
+	margin-bottom: 0px;
 }
 
 .fixed-cover-block-small .page-title p{

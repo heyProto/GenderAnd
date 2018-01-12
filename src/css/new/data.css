@@ -427,11 +427,6 @@
   body {
     background: white;
   }
-
-  .protograph-card{
-    height: 280px;
-    width: 280px;
-  }
   .protograph-gradient{
     height: 280px;
   }
@@ -447,7 +442,8 @@
     display: none;
   }
   .protograph-app-map-and-list {
-    margin-top: 40px;
+    width: 100%;
+    /* margin-top: 40px; */
   }
   .nav-item {
     width: 50%;
@@ -458,24 +454,33 @@
   }
   .protograph-app-filter-close-button {
     display: none;
-    z-index: 100;
+    z-index: 1000;
   }
   .protograph-filter-area {
     position: fixed;
     top: 1000px;
     height: 100%;
-    z-index: 100;
+    z-index: 1000;
     padding: 0px;
     width: 100% !important;
     background: white;
   }
   .protograph-filter-area-slide-up {
-    top: 50px;
+    top: 0px;
     transition: top 500ms ease-out;
   }
   #show-more-cards{
     width: 100%;
     margin-left: 0px;
     margin-top: 10px;
+  }
+  .protograph-modal {
+    top: 10%;
+    left: 0%;
+    transform: translate(-50%, 0%);
+    margin-bottom: 10%;
+  }
+  .protograph-map-legends-container {
+    right: 10px;
   }
 }
