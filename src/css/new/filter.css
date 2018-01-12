@@ -5,6 +5,8 @@
   border-right: 1px solid #efefef;
   border-left: 1px solid #efefef;
   border-bottom: 1px solid #efefef;
+  font-family: "cabin";
+  line-height: 24px;
   /* overflow: hidden; */
 }
 .protograph-filters-header {

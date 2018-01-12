@@ -67,6 +67,24 @@
     margin-bottom: 20px;
 }
 
+.white-navbar{
+	background: #fafafa;
+	color: black;
+	border-radius: 0px 0px 4px 4px;
+}
+
+.fixed-cover-block-small{
+	background: white;
+    color: black;
+    height: 170px;
+}
+
+.fixed-cover-block-small .page-title{
+	color: black;
+	margin-left: 0px;
+	margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 500px){
 	.navbar{
 		display: none;

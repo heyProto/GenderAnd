@@ -135,12 +135,15 @@
   margin-bottom: 10px; }
 
 .single-tab {
-  font-size: 16px;
+  font-size: 14px;
   font-family: cabin;
   border-bottom: 3px solid white;
   display: inline-block;
   padding: 0px 25px 8px;
-  cursor: pointer; }
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase; 
+}
 
 .active-tab {
   color: #F02E2E;
@@ -202,14 +205,14 @@
 }
 .protograph-card-area{
   width: 100%;
-  text-align: center;
+  /*text-align: center;*/
   margin-top: 20px;
   /* height: 100vh; */
   overflow-y: auto;
 }
 .protograph-card{
   width: 140px;
-  height: 140px;
+  height: 230px;
   cursor: pointer;
   display: inline-block;
   text-align: left;
@@ -284,6 +287,9 @@
   color: #333;
   padding: 11px;
   margin-right: auto;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  margin-bottom: 50px;
 }
 #show-more-cards:focus {
   outline: 0;
