@@ -28,6 +28,25 @@ $(document).ready(function(){
                 offset: 70
             });
         })
+        getJSON('https://cdn.protograph.pykih.com/04437aa71365b4eac710d54c/index.json', function (err, data) {
+            if (err != null) {
+                alert('Something went wrong: ' + err);
+            } else {
+                let originals_container = document.getElementById("more_articles_container");
+                for (let i = 0; i < 4; i++) {
+                    let createDiv = document.createElement('div');
+                    createDiv.id = 'ProtoCard-more-articles' + i;
+                    createDiv.className = 'ProtoCard-more-articles';
+                    originals_container.appendChild(createDiv);
+                    let createMarginDiv = document.createElement('div');
+                    // createMarginDiv.style.marginBottom = "20px";
+                    // originals_container.appendChild(createMarginDiv);
+                    setTimeout(function () {
+                        new ProtoEmbed.initFrame(document.getElementById("ProtoCard-more-articles" + i), data[i].iframe_url, "col4");
+                    }, 0)
+                }
+            }
+        });
     }
 
     if (mode == 'mobile' ) {
