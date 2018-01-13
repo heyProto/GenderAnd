@@ -91,13 +91,13 @@ var x = new ProtoGraph.Card.toMaps()
   chartOptions: {
     chartTitle: 'Mob Justice in India',
     height: 500,
-    defaultCircleColor: '#F02E2E'
+    defaultCircleColor: '#ED1C24'
   },
   filterConfigurationJSON: {
     colors: {
-      house_color: '#F02E2E',
+      house_color: '#ED1C24',
       text_color: '#343434',
-      active_text_color: '#F02E2E',
+      active_text_color: '#ED1C24',
       filter_summary_text_color: '#ffffff',
       filter_heading_text_color: '#ffffff'
     },

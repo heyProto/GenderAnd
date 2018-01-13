@@ -192,7 +192,7 @@ class App extends React.Component {
 
   renderLaptop() {
     if (this.state.dataJSON === undefined) {
-      let color = '#F02E2E';
+      let color = '#ED1C24';
 
       let style = {
         display: '-webkit-flex',
