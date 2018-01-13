@@ -131,7 +131,7 @@ var x = new ProtoGraph.Card.toMaps()
     },
     {
       propName: 'hasdata',
-      alias: 'Has data?'
+      alias: 'Has Data?'
     },
     {
       propName: 'hasimage',
