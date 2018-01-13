@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         opinions_container;
 
     if (mode === 'laptop') {
-        Util.getJSON('https://cdn.protograph.pykih.com/cbe9b09e0abd2b0c52a039d0/index.json', function (err, data){
+        Util.getJSON('https://cdn.protograph.pykih.com/04437aa71365b4eac710d54c/index.json', function (err, data){
             if (err != null) {
                 alert('Something went wrong: ' + err);
             } else {
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         //     $('.container.proto-container').css('overflow', 'initial');
         // });
 
-        Util.getJSON('https://cdn.protograph.pykih.com/cbe9b09e0abd2b0c52a039d0/index.json', function (err, data){
+        Util.getJSON('https://cdn.protograph.pykih.com/04437aa71365b4eac710d54c/index.json', function (err, data){
             if (err != null) {
                 alert('Something went wrong: ' + err);
             } else {
@@ -181,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // });
 
 
-    Util.getJSON('https://cdn.protograph.pykih.com/cbe9b09e0abd2b0c52a039d0/index.json', function (err, data){
+    Util.getJSON('https://cdn.protograph.pykih.com/cfc9e54ac896bf151c424f9d/index.json', function (err, data){
         if (err != null) {
             alert('Something went wrong: ' + err);
         } else {
