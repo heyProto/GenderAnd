@@ -470,9 +470,10 @@
     transition: top 500ms ease-out;
   }
   #show-more-cards{
-    width: 100%;
     margin-left: 0px;
     margin-top: 10px;
+    transform: translate(0, 0);
+    width: 300px;
   }
   .protograph-modal {
     top: 10%;

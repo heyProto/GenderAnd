@@ -97,7 +97,7 @@ class App extends React.Component {
 
   componentDidUpdate() {
     if(this.props.mode === 'laptop') {
-      $('.filter-col').sticky({ getWidthFrom: '.col-4' }); //{topSpacing:0}
+      $('.filter-col').sticky({getWidthFrom: '.col-4'});
       $('.banner-area .sticky-wrapper').css('float', 'left');
       $('.banner-area .sticky-wrapper').css("display", 'inline-block');
     }
@@ -108,8 +108,17 @@ class App extends React.Component {
       $(".tabs.active-area").removeClass("active-area");
       $(".tabs"+this.dataset.href).addClass("active-area");
     });
-  }
 
+    if (this.state.mode === 'col4') {
+      $('.hamburger-icon').on('click', (e) => {
+        $('.mobile-navigations-screen').addClass('mobile-navigations-screen-slide-in')
+      });
+
+      $('.close-icon').on('click', (e) => {
+        $('.mobile-navigations-screen').removeClass('mobile-navigations-screen-slide-in')
+      })
+    }
+  }
 
   sortObject(obj, filter) {
     var arr = [];
