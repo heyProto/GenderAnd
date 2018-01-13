@@ -68,23 +68,24 @@
     margin-bottom: 20px;
 }
 
-.white-navbar{
+/*.white-navbar{
 	background: #fafafa;
 	color: black;
 	border-radius: 0px 0px 4px 4px;
-}
+}*/
 
 .fixed-cover-block-small{
-	background: white;
-    color: black;
-    height: 200px;
+	/*background: white;*/
+    /*color: black;*/
+    /*height: 200px;*/
+    height: 250px;
 }
 
-.fixed-cover-block-small .page-title{
+/*.fixed-cover-block-small .page-title{
 	color: black;
 	margin-left: 0px;
 	margin-bottom: 0px;
-}
+}*/
 
 .fixed-cover-block-small .page-title p{
 	font-size: 14px;
