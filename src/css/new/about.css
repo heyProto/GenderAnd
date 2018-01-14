@@ -158,6 +158,19 @@ ul.scrollspy-child-ul {
 .br-space {
   height: 300px;
 }
+.ProtoCard-more-articles {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+.more-articles-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+.more-articles-link-div {
+  margin-bottom: 100px;
+}
+
 @media only screen and (max-width: 1200px) {
   .proto-container{
     margin-top: 0px !important;
@@ -472,5 +485,8 @@ ul.scrollspy-child-ul {
   }
   .scroll_navigation {
     margin-left: 20px;
+  }
+  .more-articles-link-div {
+    display: none;
   }
 }
