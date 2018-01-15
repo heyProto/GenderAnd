@@ -53,10 +53,13 @@
     }
 
     .proto-mobile-grid-navigatio-tab {
-        padding: 17px 15px;
+        padding: 17px 0px;
         font-size: 12px;
         display: inline-block;
         font-family: "cabin";
+        width: 75px;
+        box-sizing: border-box;
+        text-align: center;
     }
     .proto-mobile-grid-navigatio-tab.proto-active-tab {
         color: #ee6723;
