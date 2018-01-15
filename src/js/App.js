@@ -50,11 +50,18 @@ class App extends React.Component {
         });
 
         filters = this.state.filters.map((filter) => {
-          return {
-            name: filter.alias,
-            key: filter.propName,
-            filters: this.sortObject(Utils.groupBy(data, filter.propName), filter)
+          let sortObject = this.sortObject(Utils.groupBy(data, filter.propName), filter);
+          if (sortObject.length) {
+            return {
+              name: filter.alias,
+              key: filter.propName,
+              filters: sortObject
+            }
+          } else {
+            return false
           }
+        }).filter((e, i) => {
+          return e !== false
         });
 
         filterJSON = [
@@ -124,7 +131,6 @@ class App extends React.Component {
     var arr = [];
     for (var prop in obj) {
       if (obj.hasOwnProperty(prop)) {
-        console.log(prop, obj.hasOwnProperty(prop), "-----------", !isNaN(+prop) ? +prop : prop)
         if (prop !== 'undefined') {
           arr.push({
             'name': prop,
@@ -151,11 +157,18 @@ class App extends React.Component {
 
   onChange(filteredData) {
     let filtDat = this.state.filters.map((filter) => {
-      return {
-        name: filter.alias,
-        key: filter.propName,
-        filters: this.sortObject(Utils.groupBy(filteredData, filter.propName), filter)
+      let sortObject = this.sortObject(Utils.groupBy(filteredData, filter.propName), filter);
+      if (sortObject.length) {
+        return {
+          name: filter.alias,
+          key: filter.propName,
+          filters: sortObject
+        }
+      } else {
+        return false
       }
+    }).filter((e, i) => {
+      return e !== false
     });
 
     let filterJSON = [
