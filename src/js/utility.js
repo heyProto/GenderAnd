@@ -86,6 +86,16 @@ function getScreenSize() {
     };
 }
 
+function throttle(fn, wait) {
+    var time = Date.now();
+    return function () {
+        if ((time + wait - Date.now()) < 0) {
+            fn();
+            time = Date.now();
+        }
+    }
+}
+
 module.exports = {
     getJSON: getJSON,
     empty: empty,
@@ -93,5 +103,6 @@ module.exports = {
     groupBy: groupBy,
     setColorScale: setColorScale,
     highlightCircle: highlightCircle,
-    formatDate: formatDate
+    formatDate: formatDate,
+    throttle: throttle
 }
