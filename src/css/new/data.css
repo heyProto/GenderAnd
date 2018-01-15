@@ -311,6 +311,8 @@
   transform: translateX(-50%);
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px 0px;
+  padding-bottom: 16px;
+  padding-left: 16px;
 }
 .protograph-app-filter-icon-slide-down {
   bottom: -30px;
@@ -474,6 +476,7 @@
     margin-top: 10px;
     transform: translate(0, 0);
     width: 300px;
+    margin-bottom: 100px;
   }
   .protograph-modal {
     top: 10%;
