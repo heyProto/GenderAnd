@@ -86,4 +86,8 @@
     .div-without-margin-right{
         margin-right: 0px;
     }
+
+    .column-title{
+        display: none;
+    }
 }
