@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
-        Util.getJSON('https://cdn.protograph.pykih.com/85d31454775f2f7f85f3c386/index.json', function (err, data){
+        Util.getJSON('https://cdn.protograph.pykih.com/e61e275068f991ae00790f04/index.json', function (err, data){
             if (err != null) {
                 alert('Something went wrong: ' + err);
             } else {
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
-        Util.getJSON('https://cdn.protograph.pykih.com/85d31454775f2f7f85f3c386/index.json', function (err, data){
+        Util.getJSON('https://cdn.protograph.pykih.com/e61e275068f991ae00790f04/index.json', function (err, data){
             if (err != null) {
                 alert('Something went wrong: ' + err);
             } else {
@@ -160,25 +160,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
     });
 
-    // Util.getJSON('https://cdn.protograph.pykih.com/d3c2238e06b848668c82c0d8/index.json', function (err, data){
-    //     if (err != null) {
-    //         alert('Something went wrong: ' + err);
-    //     } else {
-    //         digests_container = document.getElementById("digests_container");
-    //         data.map((d,i) => {
-    //             let createDiv = document.createElement('div');
-    //             createDiv.id = 'ProtoCard-digests'+i;
-    //             createDiv.className= 'ProtoCard-digests';
-    //             digests_container.appendChild(createDiv);
-    //             let createMarginDiv = document.createElement('div');
-    //             createMarginDiv.style.marginBottom = "20px";
-    //             digests_container.appendChild(createMarginDiv);
-    //             setTimeout(function(){
-    //                 new ProtoEmbed.initFrame(document.getElementById("ProtoCard-digests"+i), data[i].iframe_url, "col4");
-    //             },0)
-    //         })
-    //     }
-    // });
+    Util.getJSON('https://cdn.protograph.pykih.com/d3c2238e06b848668c82c0d8/index.json', function (err, data){
+        if (err != null) {
+            alert('Something went wrong: ' + err);
+        } else {
+            digests_container = document.getElementById("digests_container");
+            data.map((d,i) => {
+                let createDiv = document.createElement('div');
+                createDiv.id = 'ProtoCard-digests'+i;
+                createDiv.className= 'ProtoCard-digests';
+                digests_container.appendChild(createDiv);
+                let createMarginDiv = document.createElement('div');
+                createMarginDiv.style.marginBottom = "20px";
+                digests_container.appendChild(createMarginDiv);
+                setTimeout(function(){
+                    new ProtoEmbed.initFrame(document.getElementById("ProtoCard-digests"+i), data[i].iframe_url, "col4");
+                },0)
+            })
+        }
+    });
 
 
     Util.getJSON('https://cdn.protograph.pykih.com/cfc9e54ac896bf151c424f9d/index.json', function (err, data){
