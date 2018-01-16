@@ -335,6 +335,9 @@ export default class Filter extends React.Component {
 
   getName(e) {
     if (!e.renderName) {
+      if (e.name == 'Genre' && e.key == 'genre'){
+        return 'Intersection';
+      }
       return e.name;
     } else {
       if (e.renderName && e.renderName.constructor === Function) {
