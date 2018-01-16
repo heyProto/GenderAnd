@@ -3,6 +3,9 @@ import Util from './utility.js'
 $(document).ready(function(){
     var mode = window.innerWidth <= 500 ? 'mobile' : 'laptop';
 
+    document.getElementById('facebook-share-link').href = 'http://www.facebook.com/sharer/sharer.php?u=' + window.location.href;
+    document.getElementById('twitter-share-link').href = 'http://twitter.com/share?url=' + window.location.href;
+
     if (mode === 'laptop') {
         $("#sticker").sticky({ topSpacing: 0, bottomSpacing: 400});
         $('.related-articles-link').sticky({ topSpacing: 20, bottomSpacing: 400});
@@ -20,17 +23,21 @@ $(document).ready(function(){
                 alert('Something went wrong: ' + err);
             } else {
                 let originals_container = document.getElementById("more_articles_container");
-                for (let i = 0; i < 4; i++) {
-                    let createDiv = document.createElement('div');
-                    createDiv.id = 'ProtoCard-more-articles' + i;
-                    createDiv.className = 'ProtoCard-more-articles';
-                    originals_container.appendChild(createDiv);
-                    let createMarginDiv = document.createElement('div');
-                    // createMarginDiv.style.marginBottom = "20px";
-                    // originals_container.appendChild(createMarginDiv);
-                    setTimeout(function () {
-                        new ProtoEmbed.initFrame(document.getElementById("ProtoCard-more-articles" + i), data[i].iframe_url, "col4");
-                    }, 0)
+                if(data.length > 0){
+                    for (let i = 0; i < 4; i++) {
+                        let createDiv = document.createElement('div');
+                        createDiv.id = 'ProtoCard-more-articles' + i;
+                        createDiv.className = 'ProtoCard-more-articles';
+                        originals_container.appendChild(createDiv);
+                        let createMarginDiv = document.createElement('div');
+                        // createMarginDiv.style.marginBottom = "20px";
+                        // originals_container.appendChild(createMarginDiv);
+                        setTimeout(function () {
+                            new ProtoEmbed.initFrame(document.getElementById("ProtoCard-more-articles" + i), data[i].iframe_url, "col4");
+                        }, 0)
+                    }
+                } else {
+                    $(originals_container).siblings(".column-title").hide();
                 }
             }
         });
@@ -92,23 +99,27 @@ $(document).ready(function(){
     }
 
 });
-Util.getJSON('https://cdn.protograph.pykih.com/85d31454775f2f7f85f3c386/index.json', function (err, data){
+Util.getJSON('https://cdn.protograph.pykih.com/bd88ce325d5266c298ec1b60/index.json', function (err, data){
     if (err != null) {
         alert('Something went wrong: ' + err);
     } else {
-        let originals_container = document.getElementById("related_container");
-        data.map((d,i) => {
-            let createDiv = document.createElement('div');
-            createDiv.id = 'ProtoCard-originals'+i;
-            // createDiv.className= 'ProtoCard-originals';
-            originals_container.appendChild(createDiv);
-            let createMarginDiv = document.createElement('div');
-            createMarginDiv.style.marginBottom = "20px";
-            originals_container.appendChild(createMarginDiv);
-            setTimeout(function(){
-                new ProtoEmbed.initFrame(document.getElementById("ProtoCard-originals"+i), data[i].iframe_url, "col4");
-            },0)
-        })
+        let related_container = document.getElementById("related_container");
+        if(data.length > 0){
+            data.map((d,i) => {
+                let createDiv = document.createElement('div');
+                createDiv.id = 'ProtoCard-originals'+i;
+                // createDiv.className= 'ProtoCard-originals';
+                related_container.appendChild(createDiv);
+                let createMarginDiv = document.createElement('div');
+                createMarginDiv.style.marginBottom = "20px";
+                related_container.appendChild(createMarginDiv);
+                setTimeout(function(){
+                    new ProtoEmbed.initFrame(document.getElementById("ProtoCard-originals"+i), data[i].iframe_url, "col4");
+                },0)
+            })
+        } else {
+            $(related_container).siblings(".column-title").hide();
+        }
     }
 });
 // if(document.getElementById('cont-button')){
