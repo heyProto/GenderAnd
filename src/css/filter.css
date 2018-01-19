@@ -59,7 +59,7 @@
   display: table;
   width: 100%;
   border-collapse: collapse;
-  border-left: 1px solid white;
+  border-left: 2px solid white;
 }
 .protograph-filter-item:hover {
   cursor: pointer;
@@ -70,7 +70,10 @@
   border-left: 2px solid #ED1C24;
 }
 .protograph-filter-item-detail.protograph-show-more-filters .protograph-filter-sub-items-container .protograph-filter-item, .protograph-filter-item-detail.protograph-show-more-filters .protograph-filter-sub-items-container .protograph-filter-item-name {
-  border-left: 0px;
+  border-left: 1px solid #fafafa;
+  color: rgba(51,51,51,0.75);
+  font-style: italic;
+  font-size: 14px;
 }
 
 .protograph-filter-item-name {
@@ -79,6 +82,10 @@
   padding: 10px;
   font-size: 14px;
   color: rgba(0,0,0,0.75);
+  border-left: 1px solid #efefef;
+}
+
+.protograph-filter-list-area{
   border-left: 1px solid #efefef;
 }
 
@@ -94,7 +101,7 @@
 }
 
 .protograph-show-more-filters .protograph-filter-body{
-  border-left: 1px solid #efefef;
+  /*border-left: 1px solid #efefef;*/
 }
 
 .protograph-filter-item-arrow {
@@ -126,7 +133,7 @@
   transition: max-height 350ms ease-out;
 }
 .protograph-filter-body {
-  padding-left: 15px;
+  padding-left: 10px;
 }
 .protograph-filters-remove-filter {
   color: black !important;
@@ -142,6 +149,17 @@
 }
 .protograph-filter-item.protograph-active-item:hover > .protograph-filters-remove-filter {
   display: block;
+}
+
+.protograph-filter-sub-items-container .protograph-filter-item-name{
+  padding-left: 10px;
+}
+
+.protograph-filter-sub-items-container .protograph-filter-item-name:before{
+  content: "\2014";
+  color: #fafafa;
+  margin-right: 10px;
+  margin-left: -10px;
 }
 
 .protograph-filter-hint-text {
