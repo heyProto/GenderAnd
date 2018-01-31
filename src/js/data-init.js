@@ -2,8 +2,12 @@ import Util from './utility.js'
 
 $(document).ready((e) => {
 
+  ProtoGraph.renderNavbar();
+
   let dimension = Util.getScreenSize(),
+    streams = ProtoGraph.streams,
     mode;
+
   if (dimension.width <= 500){
     mode = 'mobile';
   } else {
@@ -51,74 +55,68 @@ $(document).ready((e) => {
     });
   }
 
-});
+  var x = new ProtoGraph.Card.toMaps()
+    x.init({
+    selector: document.querySelector('#card-list-div'),
+    dataURL: streams["Grid"].url,
+    filterConfigurationJSON: {
+      colors: {
+        house_color: ProtoGraph.site['house_colour'],
+        text_color: '#343434',
+        active_text_color: '#ED1C24',
+        filter_summary_text_color: '#ffffff',
+        filter_heading_text_color: '#ffffff'
+      },
+      selected_heading: 'Filters',
+      reset_filter_text: 'Reset'
+    },
+    filters: [
+      {
+        propName: 'genre',
+        alias: 'Genre'
+      },
+      {
+        propName: 'subgenre',
+        alias: 'Sub Genre'
+      },
+       {
+        propName: 'country',
+        alias: 'Country'
+      },
+      {
+        propName: 'state',
+        alias: 'State'
+      },
+      {
+        propName: 'city',
+        alias: 'City'
+      },
+      {
+        propName: 'byline',
+        alias: 'Byline'
+      },
+      {
+        propName: 'hasdata',
+        alias: 'Has Data?'
+      },
+      {
+        propName: 'hasimage',
+        alias: 'Has Image?'
+      },
+      {
+        propName: 'hasvideo',
+        alias: 'Has Video?'
+      },
+      {
+        propName: 'interactive',
+        alias: 'Is Interactive?'
+      },
+      {
+        propName: 'sponsored',
+        alias: 'Is Sponsored?'
+      }
+    ]
+  })
+  x.renderLaptop();
 
-var x = new ProtoGraph.Card.toMaps()
-  x.init({
-  selector: document.querySelector('#card-list-div'),
-  dataURL: 'https://cdn.protograph.pykih.com/cbe9b09e0abd2b0c52a039d0/index.json',
-  topoURL: 'https://cdn.protograph.pykih.com/ie-mobbed/src/data/india-topo.json',
-  chartOptions: {
-    chartTitle: 'Mob Justice in India',
-    height: 500,
-    defaultCircleColor: '#ED1C24'
-  },
-  filterConfigurationJSON: {
-    colors: {
-      house_color: '#ED1C24',
-      text_color: '#343434',
-      active_text_color: '#ED1C24',
-      filter_summary_text_color: '#ffffff',
-      filter_heading_text_color: '#ffffff'
-    },
-    selected_heading: 'Filters',
-    reset_filter_text: 'Reset'
-  },
-  filters: [
-    {
-      propName: 'genre',
-      alias: 'Genre'
-    },
-    {
-      propName: 'subgenre',
-      alias: 'Sub Genre'
-    },
-     {
-      propName: 'country',
-      alias: 'Country'
-    },
-    {
-      propName: 'state',
-      alias: 'State'
-    },
-    {
-      propName: 'city',
-      alias: 'City'
-    },
-    {
-      propName: 'byline',
-      alias: 'Byline'
-    },
-    {
-      propName: 'hasdata',
-      alias: 'Has Data?'
-    },
-    {
-      propName: 'hasimage',
-      alias: 'Has Image?'
-    },
-    {
-      propName: 'hasvideo',
-      alias: 'Has Video?'
-    },
-    {
-      propName: 'interactive',
-      alias: 'Is Interactive?'
-    },
-    {
-      propName: 'sponsored',
-      alias: 'Is Sponsored?'
-    }
-  ]
-})
-x.renderLaptop();
+});

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Halogen from 'halogen';
 import List from './List.js';
-import Map from './Map.js';
+// import Map from './Map.js';
 import Utils from './utility.js';
 import {timeFormat} from 'd3-time-format';
 import Filter from "./filter.js";
@@ -12,7 +12,6 @@ class App extends React.Component {
     super(props)
     this.state = {
       dataJSON: undefined,
-      topoJSON: {},
       category: null,
       filterJSON: [],
       filteredDataJSON: undefined,
@@ -27,10 +26,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const {dataURL, topoURL} = this.props;
+    const {dataURL} = this.props;
     axios.all([
-      axios.get(dataURL),
-      axios.get(topoURL)
+      axios.get(dataURL)
     ])
     .then(axios.spread((card, topo) => {
         let all_data_keys = ["genre", "subgenre", "country", "state", "city", "byline", "hasdata","hasvideo", "hasimage" , "interactive", "sponsored"],
@@ -74,7 +72,6 @@ class App extends React.Component {
         this.setState({
           dataJSON: data,
           filteredDataJSON: data,
-          topoJSON: topo.data,
           filterJSON: filterJSON
         });
     }));
@@ -260,15 +257,8 @@ class App extends React.Component {
               <div className="tabs-area">
                 <div className="single-tab active-tab" id='list-tab' data-href='#list-area'>List</div>
               </div>
-              <div className="tabs map-area" id='map-area'>
-                {/* <Map
-                  dataJSON={this.state.filteredDataJSON}
-                  topoJSON={this.state.topoJSON}
-                  chartOptions={this.props.chartOptions}
-                  showModal={this.showModal}
-                  mode={this.props.mode}
-                /> */}
-              </div>
+              {/* <div className="tabs map-area" id='map-area'>
+              </div> */}
               <div className="tabs list-area active-area" id='list-area'>
                 <List
                   dataJSON={this.state.filteredDataJSON}

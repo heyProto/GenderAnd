@@ -4,19 +4,43 @@
     <meta charset="UTF-8">
     <title>#GenderAnd</title>
     <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Cabin:400,400i,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./proto-app-lib.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./proto-app-lib.min.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="src/css/grid.css">
     <link rel="stylesheet" type="text/css" href="src/css/navbar.css">
     <link rel="stylesheet" type="text/css" href="src/css/cover.css"> -->
-    <link rel="stylesheet" type="text/css" href="./proto-app-style.min.css">
-    <link rel="stylesheet" type="text/css" href="./proto-app-cover.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./proto-app-style.min.css">
+    <link rel="stylesheet" type="text/css" href="./proto-app-cover.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.protograph.pykih.com/lib/proto-app-lib.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.protograph.pykih.com/lib/proto-app-style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.protograph.pykih.com/014521f868f5c2e01cf7/proto-app-cover.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <script src="https://cdn.protograph.pykih.com/lib/protoGraph.min.js"></script>
 </head>
 <body>
     <div class="proto-grid-container">
-        <div class="proto-col col-16 navbar">
+
+        <div class="client-brand-cover small-cover" id="site_header">
+            <div class="client-logo"></div>
+        </div>
+        <div class="proto-col col-16 proto-verticals-navbar">
+            <div class="proto-vertical-name" id="homepage_nav">
+                Gender<span style='color: #ED1C24'>And</span>
+                <i class="chevron down icon proto-hide"></i>
+            </div>
+            <div class="page-navigation-options" id="vertical_nav"></div>
+            <div class="pnav-options single-pnav-option" id="homepage_nav_list"></div>
+            <div class="social right-float-div">
+                <div class="single-link facebook">
+                    <a href="https://www.facebook.com/dainikjagran/" target="_blank"><img src="img/fb-white.png"></a>
+                </div>
+                <div class="single-link twitter">
+                    <a href="https://twitter.com/jagrannews/" target="_blank"><img src="img/tw-white.png"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="proto-col col-16 navbar">
             <a href="./index.html"><div class="branding">#<strong>GenderAnd</strong></div></a>
             <div class="nav-links">
                 <div class="single-link active-page stories"><a href="#">Stories</a></div>
@@ -30,13 +54,10 @@
                 <div class="single-link twitter">
                     <a href="https://twitter.com/IndianExpress/" target="_blank"><img src="img/tw-white.png"></a>
                 </div>
-                <!-- <div class="single-link instagram">
-                    <a href="#" ><img src="img/in-white.png"></a>
-                </div> -->
             </div>
-        </div>
+        </div> -->
 
-        <div class="mobile-navigation">
+        <!-- <div class="mobile-navigation">
             <div class="mobile-navbar">
                 <a href="./index.html"><div class="branding">#<strong>GenderAnd</strong></div></a>
                 <div class="right-float-div">
@@ -60,12 +81,9 @@
                     <div class="single-link twitter">
                         <a href="https://twitter.com/IndianExpress/" target="_blank"><img src="img/tw-black.png"></a>
                     </div>
-                    <!-- <div class="single-link instagram">
-                        <a href="#" ><img src="img/in-black.png"></a>
-                    </div> -->
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="proto-col col-16 stick-to-top">
             <div class="col-16-story-card">
@@ -103,8 +121,14 @@
             <!-- </div> -->
         </div>
     </div>
-    <script src="./proto-app-lib.min.js"></script>
-    <script src="./proto-app-cover.min.js"></script>
+    <script>
+        window.ProtoGraph = {"streams":{"16c_Hero":{"id":633,"title":"5_Section_16c_Hero","datacast_identifier":"f846e4d48e3279c41f118b9c","url":"https://cdn.protograph.pykih.com/f846e4d48e3279c41f118b9c/index.json","name_of_stream":"Hero"},"7c":{"id":634,"title":"5_Section_7c","datacast_identifier":"770e4077a4941ea5256d8124","url":"https://cdn.protograph.pykih.com/770e4077a4941ea5256d8124/index.json","name_of_stream":"Originals"},"4c":{"id":635,"title":"5_Section_4c","datacast_identifier":"3d69d7bf43356c4f2175b937","url":"https://cdn.protograph.pykih.com/3d69d7bf43356c4f2175b937/index.json","name_of_stream":"Digests"},"3c":{"id":636,"title":"5_Section_3c","datacast_identifier":"1001c562f96ceebd39aeb873","url":"https://cdn.protograph.pykih.com/1001c562f96ceebd39aeb873/index.json","name_of_stream":"Feed"},"2c":{"id":637,"title":"5_Section_2c","datacast_identifier":"8ee0cfe562b27e4dc011d436","url":"https://cdn.protograph.pykih.com/8ee0cfe562b27e4dc011d436/index.json","name_of_stream":"Opinions"}},"ref_category_object":{"name":"GenderAnd","name_html":"Gender<span style='color: #ED1C24'>And</span>"},"vertical_header_json_url":"https://cdn.protograph.pykih.com/indianexpress-com/genderand/navigation.json","homepage_header_json_url":"https://cdn.protograph.pykih.com/indianexpress-com/verticals.json","site_header_json_url":"https://cdn.protograph.pykih.com/indianexpress-com/header.json"};
+    </script>
+    <script src="https://cdn.protograph.pykih.com/lib/proto-app-init.min.js"></script>
+    <script src="https://cdn.protograph.pykih.com/lib/proto-app-lib.min.js"></script>
+    <script src="https://cdn.protograph.pykih.com/014521f868f5c2e01cf7/proto-app-cover.min.js"></script>
+    <!-- <script src="./proto-app-lib.min.js"></script>
+    <script src="./proto-app-cover.min.js"></script> -->
 </body>
 </html>
 
