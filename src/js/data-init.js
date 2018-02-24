@@ -2,14 +2,10 @@ import Util from './utility.js'
 
 ProtoGraph.initPage = function initPage() {
   let dimension = Util.getScreenSize(),
+    mode = (dimension.width <= 500) ? 'mobile' : 'laptop',
     streams = ProtoGraph.streams,
     mode;
 
-  if (dimension.width <= 500){
-    mode = 'mobile';
-  } else {
-    mode = 'laptop';
-  }
   if (mode === 'laptop'){
     $('.filter-column').sticky({ topSpacing: 0 });
   }
