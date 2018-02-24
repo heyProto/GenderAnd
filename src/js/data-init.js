@@ -1,6 +1,7 @@
 import Util from './utility.js'
 
-$(document).ready((e) => {
+
+ProtoGraph.initPage = function initPage() {
   let dimension = Util.getScreenSize(),
     streams = ProtoGraph.streams,
     mode;
@@ -115,5 +116,4 @@ $(document).ready((e) => {
     ]
   })
   x.renderLaptop();
-
-});
+}

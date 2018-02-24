@@ -18,7 +18,9 @@ class ListCards extends React.Component {
     $('.protograph-grid-card').each((i, element) => {
       let iframe_url = element.getAttribute('data-iframe_url');
       setTimeout(function () {
-        new ProtoEmbed.initFrame(element, iframe_url, "col2");
+        new ProtoEmbed.initFrame(element, iframe_url, "col2", {
+          headerJSON: ProtoGraph.headerJSON
+        });
       }, 0);
     });
   }
@@ -40,7 +42,9 @@ class ListCards extends React.Component {
     newCards.forEach((element,i) => {
       let iframe_url = element.getAttribute('data-iframe_url');
       setTimeout(function () {
-        new ProtoEmbed.initFrame(element, iframe_url, "col2");
+        new ProtoEmbed.initFrame(element, iframe_url, "col2", {
+          headerJSON: ProtoGraph.headerJSON
+        });
       }, 0);
     });
   }
