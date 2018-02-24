@@ -1,6 +1,5 @@
 import Util from './utility.js'
 
-
 ProtoGraph.initPage = function initPage() {
   let dimension = Util.getScreenSize(),
     streams = ProtoGraph.streams,
