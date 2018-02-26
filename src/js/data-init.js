@@ -78,7 +78,12 @@ ProtoGraph.initPage = function initPage() {
           `);
           if (page.cover_image_url || page.cover_image_url_7_column) {
             setTimeout((e) => {
-              $('#proto_col_16_cover_blank').css('background-image', `url(${page.cover_image_url || page.cover_image_url_7_column})`)
+              $('#proto_col_16_cover_blank').css({
+                'background-image': `url(${page.cover_image_url || page.cover_image_url_7_column})`,
+                'height': "430px",
+                'background-size': "100%",
+                'background-repeat': "no-repeat"
+              });
             });
           }
         }
@@ -98,7 +103,7 @@ ProtoGraph.initPage = function initPage() {
           'background-image': `url(${page.cover_image_url || page.cover_image_url_7_column})`,
           'height': "430px",
           'background-size': "100%",
-          'background-repeat': "no-repeat",
+          'background-repeat': "no-repeat"
         });
       });
     }
