@@ -65,6 +65,7 @@ ProtoGraph.initPage = function initPage() {
               mode_for_cover = (mode === 'mobile') ? "col4" : "col16";
 
             div.id = `ProtoCard_16c_cover_${i}`;
+            div.className = "ProtoCard-cover";
             cover_container.appendChild(div);
 
             marginDiv.style.marginBottom = "20px";
