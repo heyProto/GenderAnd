@@ -9,17 +9,22 @@ ProtoGraph.initPage = function initPage() {
     streams = ProtoGraph.streams,
     page = ProtoGraph.page;
 
-  if (mode === 'laptop'){
-    $('.filter-column').sticky({ topSpacing: 0 });
+  if (mode === 'laptop') {
+    let sticky_sidebar_options = {
+      containerSelector: "#card-list-div",
+      additionalMarginTop: 10,
+      additionalMarginBottom: 10
+    };
+    $('.filter-column').theiaStickySidebar(sticky_sidebar_options);
   }
 
-  if (mode === 'mobile'){
+  if (mode === 'mobile') {
     $('#protograph_filter_icon').on('click', ((e) => {
       $('.protograph-app-filter-icon').addClass('block-events');
       $('.protograph-filter-area').css('display', 'block');
       setTimeout((e) => {
         $('.protograph-filter-area').addClass('protograph-filter-area-slide-up');
-      },0);
+      }, 0);
       $('#protograph_filter_icon').css('display', 'none');
       $('#protograph_filter_close_icon').css('display', 'block');
       setTimeout((i) => {
@@ -33,7 +38,7 @@ ProtoGraph.initPage = function initPage() {
       setTimeout((e) => {
         $('.protograph-filter-area').css('display', 'none');
         $('.protograph-app-filter-icon').removeClass('block-events');
-      },500);
+      }, 500);
       $('#protograph_filter_icon').css('display', 'block');
       $('#protograph_filter_close_icon').css('display', 'none');
     }));
@@ -56,13 +61,14 @@ ProtoGraph.initPage = function initPage() {
       if (err != null) {
         console.error("Error fetching 16c stream", err);
       } else {
-        let cover_container = document.getElementById("col_16_cover_container");
+        let cover_container = document.getElementById("col_16_cover_container"),
+          mode_for_cover = (mode === 'mobile') ? "col4" : "col16";
+
         if (data.length > 0) {
           data = [data[0]];
           data.map((d, i) => {
             let div = document.createElement('div'),
-              marginDiv = document.createElement('div'),
-              mode_for_cover = (mode === 'mobile') ? "col4" : "col16";
+              marginDiv = document.createElement('div');
 
             div.id = `ProtoCard_16c_cover_${i}`;
             div.className = "ProtoCard-cover";
@@ -89,7 +95,7 @@ ProtoGraph.initPage = function initPage() {
                 'height': cover_height,
                 'background-size': background_size,
                 'background-repeat': "no-repeat"
-              });
+              })
             });
           }
         }
@@ -116,7 +122,7 @@ ProtoGraph.initPage = function initPage() {
   }
 
   var x = new ProtoGraph.Card.toMaps()
-    x.init({
+  x.init({
     selector: document.querySelector('#card-list-div'),
     dataURL: streams["Grid"].url,
     filterConfigurationJSON: {
@@ -139,7 +145,7 @@ ProtoGraph.initPage = function initPage() {
         propName: 'subgenre',
         alias: 'Sub Genre'
       },
-       {
+      {
         propName: 'country',
         alias: 'Country'
       },

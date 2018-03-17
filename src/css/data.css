@@ -425,7 +425,9 @@
   left: 60%;
   transform: translate(-50%, -50%);
 }
-
+.proto-app-main-data-container {
+  overflow: hidden;
+}
 @media only screen and (max-width: 450px ) {
   body {
     background: white;
