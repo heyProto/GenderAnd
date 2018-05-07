@@ -80,7 +80,7 @@ class App extends React.Component {
     if(this.props.mode === 'laptop') {
       let sticky_sidebar_options = {
         containerSelector: "#card-list-div",
-        additionalMarginTop: 20,
+        additionalMarginTop: 50,
         additionalMarginBottom: 10
       };
       $('.filter-col').theiaStickySidebar(sticky_sidebar_options);
@@ -108,7 +108,7 @@ class App extends React.Component {
     if(this.props.mode === 'laptop') {
       let sticky_sidebar_options = {
         containerSelector: "#card-list-div",
-        additionalMarginTop: 20,
+        additionalMarginTop: 50,
         additionalMarginBottom: 10
       };
       $('.filter-col').theiaStickySidebar(sticky_sidebar_options);

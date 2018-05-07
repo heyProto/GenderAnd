@@ -15,82 +15,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <script src="https://dnt71st2q6cqr.cloudfront.net/lib/protoGraph.min.js"></script>
 </head>
-<body>
+<body class="proto-app-body">
+
+
+    <div class="proto-app-navbar-masthead" id="site_header">
+        <div class="proto-app-navbar-proto-container">
+            <div class="proto-app-navbar-site-logo proto-app-navbar-position-left"></div>
+            <div class="proto-app-navbar-menu-icon">
+                MENU
+                <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/menu-icon.png" />
+            </div>
+        </div>
+    </div>
+    <div class="proto-app-navbar-proto-container">
+        <div id="proto_app_header">
+            <div class="proto-app-navbar">
+                <div class="proto-app-navbar-logo-holder">
+                    <div class="proto-app-navbar-logo">
+                        <a href="https://pro.to" target="_blank">
+                            <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/proto-color-logo.png" class="colored-logo" />
+                            <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/proto-grey-logo.png" class="grey-logo" />
+                        </a>
+                    </div>
+                    <h1 class="proto-app-navbar-project-name" id="homepage_nav">
+                        <span style='font-weight:normal'>#</span>GENDER
+                        <span style='color: red'>AND</span>
+                    </h1>
+                    <div class="proto-app-navbar-project-by">By indianexpress.com</div>
+                    <div class="proto-app-navbar-first-navigation">
+                        <span></span>
+                        <div class="fade-effect"></div>
+                        <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/arrow-right.png" />
+                    </div>
+                </div>
+                <div class="proto-app-navbar-navigation-bar">
+                    <div class="proto-app-navbar-left-click-arrow" id="proto-navbar-prev">
+                        <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/arrow-left.png" />
+                    </div>
+                    <div class="proto-app-navbar-page-navigation">
+                        <div class="proto-app-navbar-overlay">
+                            <div class="proto-app-navbar-navigation-scroll" id="vertical_nav"></div>
+                        </div>
+                    </div>
+                    <div class="proto-app-navbar-right-click-arrow" id="proto-navbar-next">
+                        <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/arrow-right.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="proto-grid-container data-page">
-        <div class="proto-col col-16 navbar">
-            <a href="./index.html"><div class="branding">#<strong>GenderAnd</strong></div></a>
-            <div class="nav-links">
-                <div class="single-link stories"><a href="./index.html">Stories</a></div>
-                <div class="single-link active-page data"><a href="#">Explore</a></div>
-                <div class="single-link about"><a href="./about.html">About</a></div>
-            </div>
-            <div class="social right-float-div">
-                <div class="single-link facebook">
-                    <a href="https://www.facebook.com/indianexpress/" target="_blank"><img src="img/fb-white.png"></a>
-                </div>
-                <div class="single-link twitter">
-                    <a href="https://twitter.com/IndianExpress/" target="_blank"><img src="img/tw-white.png"></a>
-                </div>
-                <!-- <div class="single-link instagram">
-                    <a href="#"><img src="img/in-white.png"></a>
-                </div> -->
-            </div>
-        </div>
-
-        <div class="mobile-navigation">
-            <div class="mobile-navbar">
-                <a href="./index.html"><div class="branding">#<strong>GenderAnd</strong></div></a>
-                <div class="right-float-div">
-                    <div class="hamburger-icon"><img src="img/hamburger-icon.png"></div>
-                </div>
-            </div>
-
-            <div class="mobile-navigations-screen">
-                <div class="right-float-div">
-                    <div class="close-icon"><i class="remove icon"></i></div>
-                </div>
-                <div class="nav-links">
-                    <div class="single-link stories"><a href="./index.html">Stories</a></div>
-                    <div class="single-link data active-page"><a href="#">Explore</a></div>
-                    <div class="single-link about"><a href="./about.html">About</a></div>
-                </div>
-                <div class="social bottom-pull-div">
-                    <div class="single-link facebook">
-                        <a href="https://www.facebook.com/indianexpress/" target="_blank"><img src="img/fb-black.png"></a>
-                    </div>
-                    <div class="single-link twitter">
-                        <a href="https://twitter.com/IndianExpress/" target="_blank"><img src="img/tw-black.png"></a>
-                    </div>
-                    <!-- <div class="single-link instagram">
-                        <a href="#" ><img src="img/in-black.png"></a>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-
         <div class="proto-col col-16">
             <div id="col_16_cover_container"></div>
             <div class="clearfix"></div>
             <div id="card-list-div" class="proto-app-main-data-container"></div>
         </div>
         <div class="protograph-app-filter-icon" id="protograph_filter_icon">&#9776;</div>
-        <div class="protograph-app-filter-icon protograph-app-filter-close-button" id="protograph_filter_close_icon"><i class="remove icon"></i></div>
+        <div class="protograph-app-filter-icon protograph-app-filter-close-button" id="protograph_filter_close_icon">
+            <i class="remove icon"></i>
+        </div>
     </div>
+    <div class="proto-app-scroll-to-top" title="Scroll to top">
+        <i class="angle up icon"></i>
+    </div>
+
+
+
+
+
+
 
 
     <script>
         window.ProtoGraph = window.ProtoGraph || {};
-            ProtoGraph.streams = {"Grid":{"id":689,"title":"23_Data_Grid","datacast_identifier":"4bab6277e249736250597bfd","url":"https://d8mb500a7948r.cloudfront.net/4bab6277e249736250597bfd/index.json","name_of_stream":"23_Section_data"},"16c_Hero":{"id":1122,"title":"23_Data_16c_Hero","datacast_identifier":"1254cc1e558daeaaaa5fc89c","url":"https://d8mb500a7948r.cloudfront.net/1254cc1e558daeaaaa5fc89c/index.json","name_of_stream":"Hero"}};
-            ProtoGraph.site = {"dis_qus_integration":"","youtube_url":"","instagram_url":"","twitter_url":"https://twitter.com/IndianExpress/","facebook_url":"https://www.facebook.com/indianexpress/","house_colour":"#ee1c25","reverse_house_colour":"#4caf50","font_colour":"#ffffff","reverse_font_colour":"#ffffff","logo_url":"https://d2jco8ydyctdne.cloudfront.net/images/indianexpress/57c86975cd78ab70/2432.png","favicon_url":"https://d2jco8ydyctdne.cloudfront.net/images/indianexpress/b7b26d50262a6021/2429.png","ga_code":"","story_card_style":"Clear: Black & White","primary_language":"English","seo_name":"indianexpress.com","is_lazy_loading_activated":true};
-            ProtoGraph.page = {"headline":"Explore                                                ","cover_image_url":"","cover_image_url_7_column":""};
-            ProtoGraph.ref_category_object = {"name":"GENDERAND","name_html":"<span style='font-weight:normal'>#</span>GENDER<span style='color: red'>AND</span>"};
-            ProtoGraph.vertical_header_json_url = "https://d8mb500a7948r.cloudfront.net/genderand/navigation.json";
-            ProtoGraph.homepage_header_json_url = "https://d8mb500a7948r.cloudfront.net/verticals.json";
-            ProtoGraph.site_header_json_url = "https://d8mb500a7948r.cloudfront.net/header.json";
-        </script>
-    <script src="https://cdn.protograph.pykih.com/lib/protoGraph.min.js"></script>
-    <script src="./proto-app-init.min.js"></script>
-    <script type="text/javascript" src='./proto-app-lib.min.js'></script>
-    <script type="text/javascript" src='./proto-app-grid.min.js'></script>
+        ProtoGraph.streams = { "Grid": { "id": 689, "title": "23_Data_Grid", "datacast_identifier": "4bab6277e249736250597bfd", "url": "https://d8mb500a7948r.cloudfront.net/4bab6277e249736250597bfd/index.json", "name_of_stream": "23_Section_data", "ads": {} }, "16c_Hero": { "id": 1122, "title": "23_Data_16c_Hero", "datacast_identifier": "1254cc1e558daeaaaa5fc89c", "url": "https://d8mb500a7948r.cloudfront.net/1254cc1e558daeaaaa5fc89c/index.json", "name_of_stream": "Hero", "ads": {} } };
+        ProtoGraph.site = { "name": "indianexpress.com", "dis_qus_integration": "", "house_colour": "#ee1c25", "reverse_house_colour": "#4caf50", "font_colour": "#ffffff", "reverse_font_colour": "#ffffff", "logo_url": "https://d2jco8ydyctdne.cloudfront.net/images/indianexpress/0b567533a09c8343/3272.png", "favicon_url": "https://d2jco8ydyctdne.cloudfront.net/images/indianexpress/b7b26d50262a6021/2429.png", "ga_code": "", "story_card_style": "Clear: Color", "primary_language": "English", "seo_name": "indianexpress.com", "is_lazy_loading_activated": true, "comscore_code": null, "gtm_id": null, "is_ad_enabled": false };
+        ProtoGraph.page = { "headline": "Explore                                                ", "cover_image_url": "", "cover_image_url_7_column": "" };
+        ProtoGraph.ref_category_object = { "name": "GENDERAND", "name_html": "<span style='font-weight:normal'>#</span>GENDER<span style='color: red'>AND</span>" };
+        ProtoGraph.vertical_header_json_url = "https://d8mb500a7948r.cloudfront.net/genderand/navigation.json";
+        ProtoGraph.homepage_header_json_url = "https://d8mb500a7948r.cloudfront.net/verticals.json";
+        ProtoGraph.site_header_json_url = "https://d8mb500a7948r.cloudfront.net/header.json";
+    </script>
+    <script src="https://cdn.protograph.pykih.com/lib/protoGraph.min.js" defer></script>
+    <script src="https://cdn.protograph.pykih.com/lib/proto-app-lib.min.js" defer></script>
+    <script src="./proto-app-init.min.js" defer></script>
+    <script src="./proto-app-grid-init.min.js" defer></script>
+    <script src="./proto-app-grid.min.js" defer></script>
+
 </body>
 </html>
